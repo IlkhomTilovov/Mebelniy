@@ -8,6 +8,19 @@ const LAYOUT_LABELS = {
   unsure: "Hali bilmayman / Пока не знаю",
 };
 
+const CATEGORY_LABELS = {
+  oshxona: "Oshxona mebellari / Кухонная мебель",
+  shkaf_garderob: "Shkaf va garderoblar / Шкафы и гардеробные",
+  yotoqxona: "Yotoqxona mebellari / Мебель для спальни",
+  mehmonxona: "Mehmonxona mebellari / Мебель для гостиной",
+  tv_zona: "TV zonalari va stendlar / ТВ-зоны и стенки",
+  komod_tumba: "Komod va tumbalar / Комоды и тумбы",
+  ish_stol_kabinet: "Ish stollari va kabinetlar / Письменные столы и кабинет",
+  bolalar_xonasi: "Bolalar xonasi mebellari / Мебель для детской",
+  koridor: "Koridor va kirish zonasi / Прихожая и коридор",
+  boshqa: "Boshqa individual buyurtma / Другой индивидуальный заказ",
+};
+
 export function formatLeadMessage(lead) {
   const dims = lead.dimensions || {};
   const dimensionsText = dims.unknown
@@ -21,13 +34,19 @@ export function formatLeadMessage(lead) {
       ? `${formatNumber(lead.estimate_min)} – ${formatNumber(lead.estimate_max)} ${lead.estimate_currency || "UZS"}`
       : "Individual calculation required / Требуется индивидуальный расчёт";
 
+  const categoriesText =
+    Array.isArray(lead.categories) && lead.categories.length > 0
+      ? lead.categories.map((id) => CATEGORY_LABELS[id] || id).join(", ")
+      : "—";
+
   return [
-    "NEW KITCHEN LEAD",
+    "NEW FURNITURE LEAD",
     "",
     `Lead ID: ${lead.id}`,
     `Name: ${lead.name}`,
     `Phone: ${lead.phone}`,
     `Language: ${(lead.language || "").toUpperCase()}`,
+    `Furniture categories: ${categoriesText}`,
     `Kitchen layout: ${LAYOUT_LABELS[lead.layout] || lead.layout || "—"}`,
     `Dimensions: ${dimensionsText}`,
     `Style: ${lead.style || "—"}`,

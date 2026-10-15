@@ -3,6 +3,7 @@ import { useLanguage } from "../i18n/LanguageContext";
 import { useCalculator } from "../context/CalculatorContext";
 import ProgressBar from "../components/ui/ProgressBar";
 
+import StepCategory from "./steps/StepCategory";
 import Step1Layout from "./steps/Step1Layout";
 import Step2Dimensions from "./steps/Step2Dimensions";
 import Step3Style from "./steps/Step3Style";
@@ -15,15 +16,16 @@ import Step9Contact from "./steps/Step9Contact";
 import SuccessScreen from "./steps/SuccessScreen";
 
 const STEP_COMPONENTS = {
-  1: Step1Layout,
-  2: Step2Dimensions,
-  3: Step3Style,
-  4: Step4Material,
-  5: Step5HardwareCountertop,
-  6: Step6Budget,
-  7: Step7Timeline,
-  8: Step8Estimate,
-  9: Step9Contact,
+  1: StepCategory,
+  2: Step1Layout,
+  3: Step2Dimensions,
+  4: Step3Style,
+  5: Step4Material,
+  6: Step5HardwareCountertop,
+  7: Step6Budget,
+  8: Step7Timeline,
+  9: Step8Estimate,
+  10: Step9Contact,
 };
 
 export default function CalculatorModal() {

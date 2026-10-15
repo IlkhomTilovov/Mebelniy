@@ -43,6 +43,7 @@ const leadSchema = z.object({
   comment: z.string().trim().max(1000).optional().default(""),
   consent: z.literal(true),
   language: z.enum(["uz", "ru"]).optional().default("uz"),
+  categories: z.array(z.string().max(40)).max(10).optional().default([]),
   layout: z.string().max(40).nullable().optional(),
   dimensions: dimensionsSchema,
   style: z.string().max(40).nullable().optional(),
@@ -72,6 +73,7 @@ router.post("/", leadsRateLimiter, async (req, res) => {
     name: data.name,
     phone: data.phone,
     language: data.language,
+    categories: JSON.stringify(data.categories || []),
     layout: data.layout || null,
     dimensions: JSON.stringify(data.dimensions || null),
     style: data.style || null,
@@ -108,6 +110,7 @@ router.post("/", leadsRateLimiter, async (req, res) => {
   const delivery = await sendTelegramNotification({
     ...record,
     dimensions: data.dimensions,
+    categories: data.categories,
   });
   updateTelegramDeliveryStatus(id, delivery.ok ? "sent" : "failed", delivery.error || null);
   if (!delivery.ok) {

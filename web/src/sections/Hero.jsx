@@ -1,20 +1,17 @@
-import { Calculator, ArrowRight, Ruler, Gem, Settings } from "lucide-react";
+import { Calculator, ArrowRight } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { useCalculator } from "../context/CalculatorContext";
-import heroKitchen from "../assets/hero-kitchen.jpg";
-
-const FEATURE_ICONS = { ruler: Ruler, gem: Gem, settings: Settings };
+import heroFurniture from "../assets/hero-furniture.jpg";
 
 export default function Hero() {
-  const { t, raw } = useLanguage();
+  const { t } = useLanguage();
   const { open } = useCalculator();
-  const features = raw("hero.features") || [];
 
   return (
     <section id="top" className="relative min-h-screen snap-start flex items-start overflow-hidden">
       <img
-        src={heroKitchen}
-        alt="Premium custom kitchen"
+        src={heroFurniture}
+        alt="Premium custom furniture interior"
         className="absolute inset-0 h-full w-full object-cover"
         loading="eager"
       />
@@ -31,26 +28,6 @@ export default function Hero() {
           {t("hero.title")}
         </h1>
         <p className="mt-6 text-lg text-white/80 max-w-lg mx-auto">{t("hero.subtitle")}</p>
-
-        <div className="mt-10 flex items-start justify-center divide-x divide-white/20">
-          {features.map((feature, index) => {
-            const Icon = FEATURE_ICONS[feature.icon];
-            return (
-              <div key={index} className="flex-1 flex flex-col items-center gap-3 px-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/10 backdrop-blur text-white border border-white/20">
-                  {Icon && <Icon size={22} strokeWidth={1.75} />}
-                </div>
-                <span className="text-sm font-medium text-white/90 leading-snug">
-                  {feature.label}
-                </span>
-              </div>
-            );
-          })}
-        </div>
-
-        <p className="mt-10 text-sm text-white/70 border-l-2 border-accent pl-4 inline-block text-left">
-          {t("hero.trust")}
-        </p>
       </div>
 
       <div className="absolute inset-x-5 bottom-32 z-10 flex justify-center sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 sm:bottom-36">

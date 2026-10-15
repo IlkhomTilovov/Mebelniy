@@ -15,6 +15,7 @@ db.exec(`
     name TEXT NOT NULL,
     phone TEXT NOT NULL,
     language TEXT,
+    categories TEXT,
     layout TEXT,
     dimensions TEXT,
     style TEXT,
@@ -39,14 +40,22 @@ db.exec(`
   )
 `);
 
+// `CREATE TABLE IF NOT EXISTS` above doesn't retroactively alter a table that
+// already exists from before the `categories` column was added.
+try {
+  db.exec("ALTER TABLE leads ADD COLUMN categories TEXT");
+} catch {
+  /* column already exists */
+}
+
 const insertStmt = db.prepare(`
   INSERT INTO leads (
-    id, created_at, name, phone, language, layout, dimensions, style, material,
+    id, created_at, name, phone, language, categories, layout, dimensions, style, material,
     hardware, countertop, budget, timeline, estimate_min, estimate_max,
     estimate_currency, comment, consent, utm_source, utm_medium, utm_campaign,
     utm_content, utm_term, fbclid, telegram_status
   ) VALUES (
-    @id, @created_at, @name, @phone, @language, @layout, @dimensions, @style, @material,
+    @id, @created_at, @name, @phone, @language, @categories, @layout, @dimensions, @style, @material,
     @hardware, @countertop, @budget, @timeline, @estimate_min, @estimate_max,
     @estimate_currency, @comment, @consent, @utm_source, @utm_medium, @utm_campaign,
     @utm_content, @utm_term, @fbclid, @telegram_status

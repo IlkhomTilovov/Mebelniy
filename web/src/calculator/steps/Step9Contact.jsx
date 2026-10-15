@@ -42,6 +42,7 @@ export default function Step9Contact() {
         comment: contact.comment.trim(),
         consent: contact.consent,
         language,
+        categories: answers.categories,
         layout: answers.layout,
         dimensions: answers.dimensions,
         style: answers.style,

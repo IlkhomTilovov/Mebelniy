@@ -3,7 +3,7 @@
 export const translations = {
   uz: {
     common: {
-      brand: "KITCHEN STUDIO",
+      brand: "FURNITURE STUDIO",
       ctaCalculate: "Narxni hisoblash",
       ctaCalculateShort: "Hisoblash",
       phoneLabel: "Telefon",
@@ -16,16 +16,16 @@ export const translations = {
       close: "Yopish",
     },
     hero: {
-      eyebrow: "Individual oshxona mebellari",
-      title: "Oshxonangiz — sizning uslubingizda.",
+      eyebrow: "INDIVIDUAL MEBEL YECHIMLARI",
+      title: "Uyingiz. Sizning uslubingiz. Yagona yechim.",
       subtitle:
-        "O'lcham, did va byudjetingizga mos individual oshxona mebellari. G'oyadan o'rnatishgacha.",
-      ctaPrimary: "Bepul narx hisoblash",
-      trust: "Har bir loyiha o'lchash va individual spetsifikatsiya asosida tayyorlanadi.",
+        "Har bir xona uchun o'lchamingiz, didingiz va byudjetingizga mos individual mebel. G'oyadan tayyor loyihagacha — barcha mebellaringizni bir joyda rejalashtiring.",
+      ctaPrimary: "Mebel buyurtmasi narxini hisoblash",
+      ctaSecondary: "Barcha mebellarni ko'rish",
       features: [
         { icon: "ruler", label: "Individual o'lchamlar" },
-        { icon: "gem", label: "Sifatli materiallar" },
-        { icon: "settings", label: "Zamonaviy furnitura" },
+        { icon: "gem", label: "Material tanlovi" },
+        { icon: "settings", label: "Shaxsiy loyiha" },
       ],
     },
     faq: {
@@ -57,6 +57,21 @@ export const translations = {
       estimateDisclaimer:
         "Yakuniy narx o'lchash, material tanlovi, furnitura spetsifikatsiyasi va loyihaning tasdiqlanganidan keyin aniqlashtiriladi.",
       liveSummaryTitle: "Sizning tanlovlaringiz",
+      stepCategory: {
+        title: "Qaysi mebel turi kerak? (bir nechtasini tanlashingiz mumkin)",
+        options: {
+          oshxona: "Oshxona mebellari",
+          shkaf_garderob: "Shkaf va garderoblar",
+          yotoqxona: "Yotoqxona mebellari",
+          mehmonxona: "Mehmonxona mebellari",
+          tv_zona: "TV zonalari va stendlar",
+          komod_tumba: "Komod va tumbalar",
+          ish_stol_kabinet: "Ish stollari va kabinetlar",
+          bolalar_xonasi: "Bolalar xonasi mebellari",
+          koridor: "Koridor va kirish zonasi",
+          boshqa: "Boshqa individual buyurtma",
+        },
+      },
       step1: {
         title: "Oshxonangiz qanday shaklda?",
         options: {
@@ -173,7 +188,7 @@ export const translations = {
 
   ru: {
     common: {
-      brand: "KITCHEN STUDIO",
+      brand: "FURNITURE STUDIO",
       ctaCalculate: "Рассчитать стоимость",
       ctaCalculateShort: "Рассчитать",
       phoneLabel: "Телефон",
@@ -186,16 +201,16 @@ export const translations = {
       close: "Закрыть",
     },
     hero: {
-      eyebrow: "Индивидуальная кухонная мебель",
-      title: "Ваша кухня — в вашем стиле.",
+      eyebrow: "ИНДИВИДУАЛЬНЫЕ МЕБЕЛЬНЫЕ РЕШЕНИЯ",
+      title: "Ваш дом. Ваш стиль. Единое решение.",
       subtitle:
-        "Кухонная мебель по индивидуальным размерам с учётом вашего вкуса и бюджета. От идеи до установки.",
-      ctaPrimary: "Бесплатный расчёт",
-      trust: "Каждый проект создаётся на основе замеров и индивидуальной спецификации.",
+        "Индивидуальная мебель для каждой комнаты с учётом ваших размеров, вкуса и бюджета. От идеи до готового проекта — планируйте мебель для всего дома в одном месте.",
+      ctaPrimary: "Рассчитать стоимость заказа",
+      ctaSecondary: "Посмотреть всю мебель",
       features: [
         { icon: "ruler", label: "Индивидуальные размеры" },
-        { icon: "gem", label: "Качественные материалы" },
-        { icon: "settings", label: "Современная фурнитура" },
+        { icon: "gem", label: "Выбор материалов" },
+        { icon: "settings", label: "Персональный проект" },
       ],
     },
     faq: {
@@ -227,6 +242,21 @@ export const translations = {
       estimateDisclaimer:
         "Итоговая цена подтверждается после замера, выбора материалов, спецификации фурнитуры и согласования проекта.",
       liveSummaryTitle: "Ваш выбор",
+      stepCategory: {
+        title: "Какая мебель вам нужна? (можно выбрать несколько)",
+        options: {
+          oshxona: "Кухонная мебель",
+          shkaf_garderob: "Шкафы и гардеробные",
+          yotoqxona: "Мебель для спальни",
+          mehmonxona: "Мебель для гостиной",
+          tv_zona: "ТВ-зоны и стенки",
+          komod_tumba: "Комоды и тумбы",
+          ish_stol_kabinet: "Письменные столы и кабинет",
+          bolalar_xonasi: "Мебель для детской",
+          koridor: "Прихожая и коридор",
+          boshqa: "Другой индивидуальный заказ",
+        },
+      },
       step1: {
         title: "Какая форма у вашей кухни?",
         options: {

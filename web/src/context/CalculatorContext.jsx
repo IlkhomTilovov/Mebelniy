@@ -4,9 +4,10 @@ import { trackEvent } from "../lib/analytics";
 
 const CalculatorContext = createContext(null);
 const STORAGE_KEY = "ks_calculator_answers";
-export const TOTAL_STEPS = 9;
+export const TOTAL_STEPS = 10;
 
 const initialAnswers = {
+  categories: [],
   layout: null,
   dimensions: { length: null, secondWallLength: null, ceilingHeight: null, unknown: false },
   style: null,

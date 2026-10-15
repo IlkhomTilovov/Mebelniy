@@ -1,6 +1,6 @@
 // Business-specific values. Replace placeholders before launch.
 export const SITE = {
-  brandName: "KITCHEN STUDIO",
+  brandName: "FURNITURE STUDIO",
   phone: "+998 90 000 00 00", // TODO: real business phone
   telegramUsername: "kitchenstudio_uz", // TODO: real Telegram contact username
   instagramUrl: "https://instagram.com/kitchenstudio.uz", // TODO

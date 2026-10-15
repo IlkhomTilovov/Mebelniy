@@ -22,5 +22,5 @@ app.use((err, _req, res, _next) => {
 });
 
 app.listen(config.port, () => {
-  console.log(`KITCHEN STUDIO API listening on http://localhost:${config.port}`);
+  console.log(`FURNITURE STUDIO API listening on http://localhost:${config.port}`);
 });
