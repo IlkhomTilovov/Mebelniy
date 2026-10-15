@@ -53,7 +53,7 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="absolute inset-x-5 bottom-6 z-10 flex justify-center sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 sm:bottom-10">
+      <div className="absolute inset-x-5 bottom-16 z-10 flex justify-center sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 sm:bottom-20">
         <button
           type="button"
           onClick={open}
